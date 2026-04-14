@@ -1,7 +1,7 @@
-const BASE = process.env.NEXT_PUBLIC_API_URL
-
+const BASE = "https://stay-manager.onrender.com"
+console.log(BASE)
 async function get(path) {
-  const res = await fetch(`${BASE}${path}`, {
+  const res = await fetch(`${BASE}/api${path}`, {   // ✅ added /api
     headers: { 'Content-Type': 'application/json' },
     cache: 'no-store',
   });
@@ -34,7 +34,7 @@ export const serverApi = {
   },
   dashboard: {
     get: async () => {
-      const res = await fetch(`${BASE}/dashboard`, {
+      const res = await fetch(`${BASE}/api/dashboard`, {  // ✅ added /api
         headers: { 'Content-Type': 'application/json' },
         cache: 'no-store',
       });

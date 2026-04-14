@@ -1,7 +1,7 @@
-const BASE = process.env.NEXT_PUBLIC_API_URL
+const BASE = "https://stay-manager.onrender.com"
 
 async function request(path, options = {}) {
-  const res = await fetch(`${BASE}${path}`, {
+  const res = await fetch(`${BASE}/api${path}`, {
     headers: { 'Content-Type': 'application/json' },
     ...options,
   });
